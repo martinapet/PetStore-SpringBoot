@@ -1,102 +1,91 @@
 package models;
-import java.util.List;
 
-import javax.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import services.PetService;
+import java.sql.Date;
 
-@Entity
-public class User {
-    private static String firstName;
-    private static String lastName;
-    private String email;
-    private int budget;
-    @ManyToOne
-    private Pet pets;
+import jakarta.persistence.OneToOne;
 
-    public User(String firstName, String lastName, String email, int budget, Pet pets){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.budget = budget;
-        this.pets = pets;
-    }
+interface PetType{
+    public void displayType();
+}
+public class Pet {
+    @OneToOne
+    protected static User owner;
 
+    protected static String name;
+    protected petType type;
+    protected String description;
+    protected static long dateOfBirth; 
     
-    public User() {
-    }
+    
+    public Pet(boolean b){}
 
+    public void save(Pet pets){}
 
-    public String getFirstName() {
-        return firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public static int getBudget() {
-        return budget;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public void setBudget(int budget) {
-        this.budget = budget;
-    }
+    public void save(){}
 
-
-    public Pet getPets() {
-        return pets;
-    }
-
-
-    public void setPets(Pet pets) {
-        this.pets = pets;
-    }
-
-    public static void buy(List<User> users){
-        for(User u: users){
-            try{
-                buyPet(u);
-            }
-            catch(Exception e){
-                System.out.println(e);
-            }
+    public int price(){
+        return 0;}
+    public enum petType implements PetType{
+        CAT,
+        DOG;
+        public void displayType(){
+            System.out.println("The pet is: "+this);
         }
-        
     }
 
-
-    public static void buyPet(User user){
-        Pet freePet = new Pet(Pet.owner == null && (User.getBudget() >= Dog.price() || User.getBudget() >= Cat.price()));
-        //pet od listata pets sto nema owner i userot ima dovolen budget da ja plati cenata na toj pet
-        //let petWithoutOwner=new Pet(owner == null && owner.getBudget()>=price());
-
-        if(freePet == null)
-        {
-            throw new Exception("All pets have {} owners, so user: " +User.firstName +User.lastName + " cant buy a pet");
-        
+    public void petIsDog()
+    {
+        switch(type){
+            case DOG:
+            String rating;
         }
-        freePet.owner = user;
-        
-        switch(freePet.type){
-            case(Cat):
-            System.out.println("Meow, cat" +Cat.name+ " has owner" +Pet.owner);
-            break;
-            case(Dog):
-            System.out.println("Woof, dog" +Dog.name+ " has owner" +Pet.owner);
-            break;
-            default:
-            System.out.println("Pet has been bought!!");
-            break;
-        }
-    }    
+    }
+    
+    public Pet(User owner, String name, petType type, String description, long dateOfBirth){
+        this.owner = owner;
+        this.name = name;
+        this.type=type;
+        this.description = description;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(petType type) {
+        this.type = type;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDateOfBirth(long dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public petType getType() {
+        return type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public long getDateOfBirth() {
+        return dateOfBirth;
+    }
 }
