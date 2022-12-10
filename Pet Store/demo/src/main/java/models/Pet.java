@@ -2,20 +2,19 @@ package models;
 
 import java.sql.Date;
 
-
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 interface PetType{
     public void displayType();
 }
 public class Pet {
-    @ManyToOne
-    protected User owner;
+    @OneToOne
+    protected static User owner;
 
-    protected String name;
+    protected static String name;
     protected petType type;
     protected String description;
-    protected long dateOfBirth; 
+    protected static long dateOfBirth; 
     
     
     public Pet(){}
@@ -89,5 +88,5 @@ public class Pet {
     public long getDateOfBirth() {
         return dateOfBirth;
     }
-    
+
 }
