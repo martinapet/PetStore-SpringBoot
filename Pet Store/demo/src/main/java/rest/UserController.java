@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,10 @@ public class UserController {
     @Autowired
     UserService usersService;
 
+    @GetMapping("/list")
+    public List<User> list(){
+     return usersService.list();
+    }
    private User createUser(User user){
     return usersService.addUser(user);
    }
