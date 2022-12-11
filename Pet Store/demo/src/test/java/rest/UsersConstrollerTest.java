@@ -1,4 +1,4 @@
-package rest;
+package demo.demo.rest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,14 +15,14 @@ import services.UserService;
 public class UsersConstrollerTest {
 
     @Mock
-    UserService usersService;
+    UserService userService;
 
     @InjectMocks
-    UserController usersController;
+    UserController userController;
 
     @Test void testCreateUser(){
-        usersController.createUser(null);
-        Mockito.verify(usersService).createUsers(null);
+        userController.createUser(null);
+        Mockito.verify(userService).createUsers(null);
     }
     
 }
