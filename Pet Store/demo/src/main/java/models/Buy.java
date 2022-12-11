@@ -1,7 +1,7 @@
 package models;
 
 public class Buy {
-    public int buyPet(User user){
+    public static int buyPet(User user){
         //Pet freePet = new Pet(Pet.owner == null && (User.getBudget()>= Dog.price() || User.getBudget() >= Cat.price()));
         //pet kojsto nema owner
         Pet freePet = new Pet(); 
