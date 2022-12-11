@@ -3,6 +3,7 @@ package services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import models.Pet;
 import repositories.PetRepository;
@@ -10,13 +11,11 @@ import repositories.PetRepository;
 public class PetService {
 
     @Autowired
-    private PetRepository petsRepository;
+    private static PetRepository petsRepository;
 
-    public List<Pet> list(){
-        return petsRepository.findAll();
-    }
+    
 
-    public Pet addPet(Pet pets) {
+    public static Pet addPet(Pet pets) {
         return petsRepository.save(pets);
     }
 
@@ -27,6 +26,10 @@ public class PetService {
     public Pet createPets(Pet pet){
         return petsRepository.save(pet);
     }
+
+    public List<Pet> list(){
+        return petsRepository.findAll();
+       }
     
     
 }
