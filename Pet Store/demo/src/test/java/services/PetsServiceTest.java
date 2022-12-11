@@ -20,7 +20,7 @@ public class PetsServiceTest {
 
     @Test
     void testPets(){
-        petsService.addPet(null);
+        PetService.addPet(null);
         Mockito.verify(petsRepository.addPet(null));
     }
     
