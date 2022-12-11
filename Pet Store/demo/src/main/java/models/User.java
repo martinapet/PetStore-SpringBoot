@@ -64,8 +64,9 @@ public class User {
 
     public static void buy(List<User> users){
         for(User u: users){
+            Pet p = u.getPets();
             try{
-                Buy.buyPet(u);
+                Buy.buyPet(u,p);
             }
             catch(Exception e){
                 System.out.println(e);
