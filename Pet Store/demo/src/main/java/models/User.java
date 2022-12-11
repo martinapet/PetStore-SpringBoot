@@ -7,10 +7,10 @@ import services.PetService;
 
 @Entity
 public class User {
-    private static String firstName;
-    private static String lastName;
+    private String firstName;
+    private String lastName;
     private String email;
-    private static int budget;
+    private int budget;
     @ManyToOne
     private Pet pets;
 
@@ -62,7 +62,7 @@ public class User {
         this.pets = pets;
     }
 
-    public static void buy(List<User> users){
+    public void buy(List<User> users){
         for(User u: users){
             Pet p = u.getPets();
             try{
