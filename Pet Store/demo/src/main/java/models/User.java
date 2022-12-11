@@ -10,7 +10,7 @@ public class User {
     private static String firstName;
     private static String lastName;
     private String email;
-    private int budget;
+    private static int budget;
     @ManyToOne
     private Pet pets;
 
@@ -60,6 +60,17 @@ public class User {
 
     public void setPets(Pet pets) {
         this.pets = pets;
+    }
+
+    public static void buy(List<User> users){
+        for(User u: users){
+            try{
+                Buy.buyPet(u);
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
+        }
     }
     
 
