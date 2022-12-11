@@ -11,11 +11,11 @@ import repositories.PetRepository;
 public class PetService {
 
     @Autowired
-    private static PetRepository petsRepository;
+    private PetRepository petsRepository;
 
     
 
-    public static Pet addPet(Pet pets) {
+    public Pet addPet(Pet pets) {
         return petsRepository.save(pets);
     }
 
