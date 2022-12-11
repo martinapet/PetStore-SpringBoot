@@ -18,10 +18,11 @@ public class PetsServiceTest {
     @InjectMocks
     PetService petsService;
 
-    @Test
+    /*@Test
     void testPets(){
         PetService.addPet(null);
         Mockito.verify(petsRepository.addPet(null));
-    }
+    }*/
+    
     
 }
