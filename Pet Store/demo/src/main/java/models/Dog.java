@@ -9,7 +9,7 @@ public class Dog extends Pet{
     }
     public Dog() {
     }
-    public static int rating;
+    public int rating;
     @Override
     public int price() {
         // TODO Auto-generated method stub
@@ -17,7 +17,7 @@ public class Dog extends Pet{
         //(age(years) * 1$) + (1$ * rating)
        return (int)((new Date(dateOfBirth).getTime()*1)+(1*rating));
     }
-    public static int getRating() {
+    public int getRating() {
         return rating;
     }
    
