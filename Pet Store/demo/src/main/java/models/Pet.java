@@ -9,12 +9,12 @@ import jakarta.persistence.OneToOne;
 // }
 public class Pet {
     @OneToOne
-    protected static User owner;
+    protected User owner;
 
-    protected static String name;
+    protected String name;
     //protected petType type;
     protected String description;
-    protected static long dateOfBirth; 
+    protected long dateOfBirth; 
     
     
     public Pet(){}
