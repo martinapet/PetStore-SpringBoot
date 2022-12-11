@@ -3,11 +3,13 @@ package models;
 import java.util.Date;
 
 public class Cat extends Pet{
-    public Cat(User owner, String name, petType type, String description, long dateOfBirth) {
-        super(owner, name, type, description, dateOfBirth);
+    public Cat(User owner, String name, String description, long dateOfBirth) {
+        super(owner, name, description, dateOfBirth);
         //TODO Auto-generated constructor stub
     }
 
+    public Cat() {
+    }
     @Override
     public int price() {
         // TODO Auto-generated method stub
