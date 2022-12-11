@@ -1,4 +1,4 @@
-package rest;
+package demo.demo.rest;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
