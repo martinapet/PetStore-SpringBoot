@@ -9,7 +9,7 @@ public class PetCreateForm {
     private User owner;
 
     private String name;
-    private models.Pet.petType type;
+    //private models.Pet.petType type;
     private String description;
     private long dateOfBirth;
 
@@ -26,9 +26,9 @@ public class PetCreateForm {
         this.name = name;
     }
 
-    public void setType(models.Pet.petType type) {
-        this.type = type;
-    }
+    // public void setType(models.Pet.petType type) {
+    //     this.type = type;
+    // }
 
     public void setDescription(String description) {
         this.description = description;
@@ -46,9 +46,9 @@ public class PetCreateForm {
         return name;
     }
 
-    public models.Pet.petType getType() {
-        return type;
-    }
+    // public models.Pet.petType getType() {
+    //     return type;
+    // }
 
     public String getDescription() {
         return description;
