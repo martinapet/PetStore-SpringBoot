@@ -10,5 +10,7 @@ To initialize the database there Is `data.sql` file with basic SQL scripts. The 
 
 **Testingg with POSTMAN**
 
-          - To list all pet GET: *localhost:8080/api/pets/list*
-          - To list all user GET:  *localhost:8080/api/pets/list*
+When we start the application, we can test it in POSTMAN sending the requests:
+          - To list all pet *GET:localhost:8080/api/pets/list*
+          - To list all user *GET:localhost:8080/api/pets/list* 
+and we get the response.
