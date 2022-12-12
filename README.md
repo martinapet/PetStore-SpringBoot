@@ -1,7 +1,6 @@
 # PetStore-SpringBoot
 
-
-There are classes **Pet** and **User** with their variables, getters, setters. The classes Dog and Cat inherit from the class Pet, to know what type of pet it is. With this inheritance, classes Dog ang Cat inherit all the variables and methods from the class Pet. Additionally in the Dog class is the variable rating. The method price() is defined in the class Pet, but in the classes Dog and Cat we override the method (accordingly with the formula for the type of pet).  In UserController and PetController there are methods for createPet() and createUser(). In the UserService and PetServices there are listUser, listPet and other methods.
+We have two classes **Pet** and **User** which represent pets and their owners. The classes Dog and Cat inherit from the class Pet, to know what type of pet it is.  Additionally in the Dog class is the variable rating. With the list() methods found in **PetService** and **UserService**, we list all pets and users, respectively. With the buy() method, we go through all the users and check if they have enough budget to buy the pet and if that pet has an owner at all. If these conditions are met, then you can buy a pet for this user. And we continue on with checking the users.. We also have methods that create pets and users.. In UserController and PetController there are methods for createPet() and createUser().
 
 **h2 database**
 
