@@ -12,6 +12,7 @@ public class BuyService {
 
     @Autowired
     private PetService petService;
+    @Autowired
     private UserService userService;
 
     public void buyPet() {
