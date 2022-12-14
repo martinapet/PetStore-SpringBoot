@@ -66,22 +66,22 @@ public class User {
         this.pets = pets;
     }
 
-    public void buy(List<User> users, Dog d, Cat c) {
-        for (User u : users) {
-            // Dog d = new Dog();
-            // Cat c = new Cat();
-            try {
-                // Buy.buyPet(u,p);
-                if (u.getBudget() >= c.price()) {
-                    System.out.println("Meow, cat" + c.name + " has owner" + c.owner);
-                }
-                if (u.getBudget() >= d.price()) {
-                    System.out.println("Woof, dog" + d.name + " has owner" + d.owner);
-                }
-            } catch (Exception e) {
-                System.out.println(e);
-            }
-        }
-    }
+    // public void buy(List<User> users, Dog d, Cat c) {
+    //     for (User u : users) {
+    //         // Dog d = new Dog();
+    //         // Cat c = new Cat();
+    //         try {
+    //             // Buy.buyPet(u,p);
+    //             if (u.getBudget() >= c.price()) {
+    //                 System.out.println("Meow, cat" + c.name + " has owner" + c.owner);
+    //             }
+    //             if (u.getBudget() >= d.price()) {
+    //                 System.out.println("Woof, dog" + d.name + " has owner" + d.owner);
+    //             }
+    //         } catch (Exception e) {
+    //             System.out.println(e);
+    //         }
+    //     }
+    // }
 
 }
