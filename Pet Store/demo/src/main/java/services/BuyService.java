@@ -23,7 +23,9 @@ public class BuyService {
                 if (p.owner == null) { //ako pet e sloboden, t.e. ako nema sopstvenik
                     if (u.getBudget() >= p.price()) { //proveruva dali user-ot ima dovolno budget za da go kupi milenikot
                         System.out.println("Pet has been bought!!");
-
+                        p.setOwner(u);
+                        u.setBudget(u.getBudget()-p.price());
+        
                     }
                 }
 
